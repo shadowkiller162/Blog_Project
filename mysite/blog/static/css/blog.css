@@ -1,0 +1,82 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+.centerstage{
+  margin-left: auto;
+  margin-right: auto;
+}
+.techfont{
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.bigbrand{
+  font-size: 1.5em;
+}
+
+.postdate{
+  text-align: center;
+}
+
+.posttitle{
+  font-family: 'Russo One', sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+
+.postcontent{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5em;
+}
+
+.btn-comment{
+  position: absolute;
+  right: 0px;
+}
+/* COLOR Change below */
+.backstretch {
+  width: 100vw;
+  height: 400px;
+  color: #1e5799; /* Old browsers */
+  color: -moz-radial-gradient(center, ellipse cover,  #1e5799 0%, #7db9e8 100%); /* FF3.6+ */
+  color: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#1e5799), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+  color: -webkit-radial-gradient(center, ellipse cover,  #1e5799 0%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+  color: -o-radial-gradient(center, ellipse cover,  #1e5799 0%,#7db9e8 100%); /* Opera 12+ */
+  color: -ms-radial-gradient(center, ellipse cover,  #1e5799 0%,#7db9e8 100%); /* IE10+ */
+  color: radial-gradient(ellipse at center,  #1e5799 0%,#7db9e8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.backstretch.animated {
+  -webkit-animation: filter-animation 8s infinite;
+  animation: filter-animation 8s infinite;
+}
+
+@-webkit-keyframes filter-animation {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  50% {
+    -webkit-filter: hue-rotate(100deg);
+  }
+
+  100% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes filter-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(100deg);
+  }
+
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
