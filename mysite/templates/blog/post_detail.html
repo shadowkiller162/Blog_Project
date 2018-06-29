@@ -6,7 +6,7 @@
       {{ post.published_date }}
     </div>
   {% else %}
-    <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+    <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">發佈</a>
   {% endif %}
 
   <p class="postcontent">{{ post.text|safe|linebreaksbr }}</p>
@@ -21,7 +21,7 @@
   {% endif %}
 
   <hr>
-  <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+  <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">新增回覆</a>
 
   <div class="container">
     {% for comment in post.comments.all %}

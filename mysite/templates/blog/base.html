@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Blog</title>
+    <title>Hughe's Blog</title>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Medium Style Editer -->
-    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static '/css/blog.css' %}">
-    <!-- font -->
+    <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Russo+One|Ubuntu" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Medium Style Editer -->
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@5.23.2/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@5.23.2/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'blog/css/master.css' %}">
   </head>
-  <body class="backstretch animated">
+  <body background="{% static 'images/david-troeger-718292-unsplash.jpg' %}">
     <!-- Navbar -->
     <nav class="navbar navbar-default techfont custom-navbar">
       <div class="container">
         <ol class="nav navbar-nav">
-          <li><a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a></li>
-          <li><a class="navbar-link" href="{% url 'about' %}">About</a></li>
+          <li><a class="navbar-brand bigbrand" href="{% url 'post_list' %}">Hughe's Blog</a></li>
+          <li><a class="navbar-link" href="{% url 'about' %}">About me</a></li>
           <li><a class="navbar-link" href="https://github.com/shadowkiller162">Github</a></li>
           <li><a href="https://www.linkedin.com/in/hughe-chen-29978a146/">LinkIn</a></li>
         </ol>
-
         <ol class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
             <li><a href="{% url 'post_new' %}">New Post</a></li>
@@ -39,20 +42,21 @@
           {% endif %}
         </ol>
       </div>
-
     </nav>
     <!-- Content Block -->
-    <div class="content container">
+    <div class="container mycontent">
       <div class="row">
         <div class="col-md-8">
           <div class="blog_posts">
               {% block content %}
               {% endblock %}
           </div>
-
         </div>
       </div>
-
+      {% block paper %}
+      {% endblock %}
     </div>
+    <canvas id="canvas"></canvas>
   </body>
+  <script type="text/javascript" src="{% static 'blog/js/master.js' %}"></script>
 </html>
