@@ -1,13 +1,17 @@
 {% extends "blog/base.html" %}
 {% load static %}
 {% block content %}
-  <img class="bighead" src="{% static 'images/bighead.jpg' %}" alt="Hughe Chen">
-  <h1>About Me</h1>
-  <h4>半路出家工程師一枚，喜歡電影、Python、資料庫，<br>
-    熱愛動手實作勝過看書，尋找鼓勵學習的團隊，相<br>
-    信努力堅持就會成長。</h4>
+  <div class="col-md-3">
+    <img class="bighead self-content" src="{% static 'images/bighead.jpg' %}" alt="Hughe Chen">
+  </div>
+  <div class="col-md-9">
+    <br><br><br><br><br>
+    <h3>半路出家工程師一枚，喜歡電影、Python、資料庫，熱愛動手實作勝過看書，尋找鼓勵學習的團隊，相信努力堅持就會成長。</h3>
+  </div>
 {% endblock %}
 {% block paper %}
+<br>
+  <h2>作品集</h2>
   <div class="row">
     <div class="col-md-4">
       <h3>MongdDB & Spark 數據平台</h3>
@@ -16,6 +20,10 @@
     <div class="col-md-4 col-md-offset-2">
       <h3>LineBot</h3>
       <iframe src="https://drive.google.com/file/d/1aP7LfKX7uAK45Fk6VHJ8-6m1TUKUCUM-/preview" width="500" height="280"></iframe>
+    </div>
+    <div class="col-md-4">
+      <a href="https://hughesocial.herokuapp.com/"><h3>Star Social網站</h3></a> 
+      <a href="https://hughesocial.herokuapp.com/"><img src="{% static 'images/star_social.png' %}" width="500" height="280"></a>
     </div>
   </div>
 {% endblock %}
